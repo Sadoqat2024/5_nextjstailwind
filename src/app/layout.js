@@ -1,5 +1,14 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import "../main.css"
+import Navbar from "./component/Navbar";
+import Destination from "./component/Destination";
+import Journey from "./component/Journey";
+import Swim from "./component/Swim";
+import Discover from "./component/Discover";
+import Forms from "./component/Forms";
+import Client from "./component/Client";
+import Footer from "./component/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,10 +29,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <Navbar/>
         {children}
+        <Forms/>
+        <Destination/>
+        <Journey/>
+        <Swim/>
+        <Discover/>
+        <Client/>
+        <div>
+          <Footer/>
+        </div>
       </body>
     </html>
   );
